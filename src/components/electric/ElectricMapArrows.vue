@@ -1,24 +1,13 @@
-<template>
-  <div v-html="Map" @click="mapClick"></div>
-  <NodeTree :fed-from="fedFrom" :feeds-to="feedsTo" :by-name="byName" @node-click="handleNodeClick" />
-</template>
-
 <script setup lang="ts">
-import NodeTree from './NodeTree.vue';
-import { reactive, onMounted, computed } from 'vue';
-import Map from "../assets/MINT_floor_plan.svg?raw";
+import { reactive, onMounted, onBeforeUnmount, computed } from 'vue';
 
-let svg: SVGSVGElement;
-const fedFrom = reactive<Record<string, string>>({})
+const props = defineProps<{ svg: SVGSVGElement }>();
+const svg = props.svg;
 const feedsTo = reactive<Record<string, SVGGraphicsElement[]>>({})
 const byName = reactive<Record<string, SVGGraphicsElement>>({})
 
 
-function handleNodeClick(payload: { name: string; el: SVGGraphicsElement }) {
-  console.log(payload.name, payload.el)
-}
-
-function mapClick(e: PointerEvent) {
+function mapClick(e: MouseEvent) {
   let text = (e.target as Element).parentElement as SVGGraphicsElement | null;
   if (!text)
     return;
@@ -46,8 +35,6 @@ function traceFeed(text: SVGGraphicsElement) {
 }
 
 onMounted(() => {
-  svg = document.querySelector("svg") as SVGSVGElement;
-
   if (!svg.querySelector("#arrowhead")) {
     const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
     defs.innerHTML = `
@@ -59,8 +46,10 @@ onMounted(() => {
     svg.prepend(defs);
   }
 
-  const dLayer = document.querySelector('g[inkscape\\:groupmode="layer"][inkscape\\:label="Electric Distribution"]') as Element;
-  const cLayer = document.querySelector('g[inkscape\\:groupmode="layer"][inkscape\\:label="Electric Outlets"]') as Element;
+  svg.addEventListener("click", mapClick);
+
+  const dLayer = svg.querySelector('g[inkscape\\:groupmode="layer"][inkscape\\:label="Electric Distribution"]') as Element;
+  const cLayer = svg.querySelector('g[inkscape\\:groupmode="layer"][inkscape\\:label="Electric Outlets"]') as Element;
 
   const dText = dLayer.querySelectorAll("text");
   const cText = cLayer.querySelectorAll("text");
@@ -81,7 +70,6 @@ onMounted(() => {
       text.dataset.fedFrom = source;
       feedsTo[source] ??= [];
       feedsTo[source].push(text);
-      fedFrom[name] = source;
     }
 
     if (name || source) {
@@ -91,6 +79,9 @@ onMounted(() => {
 });
 
 
+onBeforeUnmount(() => {
+  svg.removeEventListener("click", mapClick);
+});
 
 function getCenter(el: SVGGraphicsElement) {
   const bbox = el.getBBox();
@@ -124,18 +115,3 @@ function drawLine(a: SVGGraphicsElement, b: SVGGraphicsElement, color: string = 
 }
 
 </script>
-
-
-
-<style scoped>
-div {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  border: 2px solid red;
-}
-
-svg {
-  object-fit: cover;
-}
-</style>

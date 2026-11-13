@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, shallowRef } from 'vue'
 import LayerTree from './layerTree/LayerTree.vue'
+import ElectricMapArrows from './electric/ElectricMapArrows.vue';
 import drawing from "../assets/MINT_floor_plan.svg?raw";
 
 const host = ref<HTMLElement | null>(null)
@@ -15,6 +16,7 @@ onMounted(() => {
   <div class="map">
     <aside class="tree">
       <LayerTree v-if="svg" :svg="svg" />
+      <ElectricMapArrows v-if="svg" :svg="svg" />
     </aside>
     <div ref="host" class="svg-host" v-html="drawing"></div>
   </div>
