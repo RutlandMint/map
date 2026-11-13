@@ -85,17 +85,17 @@ onBeforeUnmount(() => {
 
 function getCenter(el: SVGGraphicsElement) {
   const bbox = el.getBBox();
-  const ctm = el.getCTM()!;
+
+  // element's local coords -> screen -> svg root user space.
+  // (getCTM() already includes the viewBox scaling, which the root-level
+  // line would then get applied a second time)
+  const m = svg.getScreenCTM()!.inverse().multiply(el.getScreenCTM()!);
 
   // center point in local coords
-  const x = bbox.x + bbox.width / 2;
-  const y = bbox.y + bbox.height / 2;
-
-  // transform to SVG root coords
   const pt = svg.createSVGPoint();
-  pt.x = x;
-  pt.y = y;
-  return pt.matrixTransform(ctm);
+  pt.x = bbox.x + bbox.width / 2;
+  pt.y = bbox.y + bbox.height / 2;
+  return pt.matrixTransform(m);
 }
 
 function drawLine(a: SVGGraphicsElement, b: SVGGraphicsElement, color: string = "black") {
