@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import Diagram from './components/Diagram.vue';
+import Map from './components/Map.vue';
 import './assets/base.css';
 </script>
 
 <template>
-  <Diagram/>
+  <Map/>
 </template>
 
-<style scoped></style>
+<style>
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+</style>
