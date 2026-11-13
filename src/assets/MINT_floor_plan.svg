@@ -29,7 +29,7 @@
      inkscape:window-x="5749"
      inkscape:window-y="1612"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer29"
+     inkscape:current-layer="layer26"
      showguides="false"
      inkscape:document-units="mm"
      showgrid="false"><inkscape:grid
@@ -3730,8 +3730,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="Labels"
-     style="display:inline"
-     sodipodi:insensitive="true"><text
+     style="display:inline"><text
        xml:space="preserve"
        font-size="15.1077px"
        font-family="Calibri"
@@ -3847,7 +3846,7 @@
          id="tspan816"
          style="stroke-width:0.83815">Pottery</tspan></text><g
        id="g1595"
-       transform="matrix(0.83815,0,0,0.83815,-190.74024,-30.909749)"><text
+       transform="matrix(0.83815,0,0,0.83815,-220.43872,-25.960001)"><text
          xml:space="preserve"
          font-size="18px"
          font-family="Calibri"
@@ -4100,7 +4099,7 @@
          id="tspan806"
          style="stroke-width:0.83815">Lobby</tspan></text><g
        id="g1605"
-       transform="matrix(0.83815,0,0,0.83815,-197.24024,-62.409746)"><text
+       transform="matrix(0.83815,0,0,0.83815,-209.26105,-41.903651)"><text
          xml:space="preserve"
          font-size="18px"
          font-family="Calibri"
@@ -4120,7 +4119,7 @@
            x="1062.1062 1071.0883 1080.0883 1086.1183 1092.8142 1101.0581 1110.796 1118.302"
            id="tspan818">Entrance</tspan></text></g><g
        id="g1612"
-       transform="matrix(0.83815,0,0,0.83815,-197.24024,-30.909749)"><text
+       transform="matrix(0.83815,0,0,0.83815,-162.59201,-50.708737)"><text
          xml:space="preserve"
          font-size="18px"
          font-family="Calibri"
@@ -5646,7 +5645,7 @@
            fill="#9b2423"
            id="rect20-3" /></g><g
          id="g1-3"
-         transform="matrix(0.19980586,0,0,0.19980586,504.45279,521.08803)"
+         transform="matrix(0.19980586,0,0,0.19980586,512.23096,518.2596)"
          inkscape:label="Fire Extinguisher Icon"><path
            d="m 5.4189,5.423 h 189.16 v 189.15 H 5.4189 Z"
            fill-rule="evenodd"
@@ -5774,7 +5773,7 @@
            fill="#9b2423"
            id="rect20-63" /></g><g
          id="g1-1"
-         transform="matrix(0.19980586,0,0,0.19980586,242.79593,184.01697)"
+         transform="matrix(0.19980586,0,0,0.19980586,237.84618,174.82458)"
          inkscape:label="Fire Extinguisher Icon"><path
            d="m 5.4189,5.423 h 189.16 v 189.15 H 5.4189 Z"
            fill-rule="evenodd"
@@ -5843,7 +5842,7 @@
        style="display:inline"><g
          id="g1"
          inkscape:label="Exit Icon"
-         transform="matrix(0.40646841,0,0,0.40646841,628.68384,576.69824)"><rect
+         transform="matrix(0.40646841,0,0,0.40646841,627.97673,595.08301)"><rect
            style="fill:#ffffff;fill-opacity:1;stroke-width:0.99809"
            id="rect1"
            width="92.984535"
@@ -5856,7 +5855,7 @@
            style="stroke-width:0.165362" /></g><g
          id="g1-9"
          inkscape:label="Exit Icon"
-         transform="matrix(0.40646841,0,0,0.40646841,138.72398,704.96113)"><rect
+         transform="matrix(0.40646841,0,0,0.40646841,139.43109,704.25402)"><rect
            style="fill:#ffffff;fill-opacity:1;stroke-width:0.99809"
            id="rect1-9"
            width="92.984535"
@@ -5869,7 +5868,7 @@
            style="stroke-width:0.165362" /></g><g
          id="g1-0"
          inkscape:label="Exit Icon"
-         transform="matrix(0.40646841,0,0,0.40646841,628.77425,674.52609)"><rect
+         transform="matrix(0.40646841,0,0,0.40646841,628.77425,683.71848)"><rect
            style="fill:#ffffff;fill-opacity:1;stroke-width:0.99809"
            id="rect1-1"
            width="92.984535"
